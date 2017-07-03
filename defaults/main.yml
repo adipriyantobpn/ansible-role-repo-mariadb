@@ -1,2 +1,6 @@
 ---
 # defaults file for adipriyantobpn.repo-mariadb
+
+repo_location:              international   # available options: international, vagrant
+mariadb_enabled:            yes
+mariadb_version:            10.2

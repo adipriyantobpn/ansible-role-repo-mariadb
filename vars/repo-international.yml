@@ -1,0 +1,10 @@
+---
+# yum variables can be checked using this command:
+#   $ python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
+
+mariadb_gpgkey_url:            "https://yum.mariadb.org/RPM-GPG-KEY-MariaDB"
+mariadb_repo:
+  "mariadb-{{ mariadb_version }}":
+    file: "mariadb"
+    enabled: "{{ mariadb_enabled }}"
+    baseurl: "http://yum.mariadb.org/{{ mariadb_version }}/centos/$releasever/$basearch/"

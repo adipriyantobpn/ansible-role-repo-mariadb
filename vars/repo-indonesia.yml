@@ -1,0 +1,11 @@
+---
+# yum variables can be checked using this command:
+#   $ python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
+
+epel_repoinstaller_url: "http://repo.ugm.ac.id/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+epel_gpgkey_url:        "http://repo.ugm.ac.id/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+epel_repo:
+  EPEL:
+    file: epel
+    enabled: "{{ epel_enabled }}"
+    baseurl: "http://repo.ugm.ac.id/epel/$releasever/$basearch/"
