@@ -2,5 +2,6 @@
 # defaults file for adipriyantobpn.repo-mariadb
 
 repo_location:              international   # available options: international, vagrant
+vagrant_repo_base_dir:      "file:///vagrantshare/repo/"
 mariadb_enabled:            yes
 mariadb_version:            10.2

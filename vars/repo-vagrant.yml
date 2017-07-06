@@ -2,9 +2,9 @@
 # yum variables can be checked using this command:
 #   $ python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
 
-mariadb_gpgkey_url:        "file:///vagrant/repofile/RPM-GPG-KEY-MariaDB"
+mariadb_gpgkey_url:        "{{ vagrant_repo_base_dir }}RPM-GPG-KEY-MariaDB"
 mariadb_repo:
   "mariadb-{{ mariadb_version }}":
     file: mariadb
     enabled: "{{ mariadb_enabled }}"
-    baseurl: "file:///vagrant/repo/mariadb-{{ mariadb_version }}/"
+    baseurl: "{{ vagrant_repo_base_dir }}mariadb-{{ mariadb_version }}/"
